@@ -34,34 +34,36 @@
             margin: 0;
         }
         header nav ul li {
-            margin: 0 10px;
+            margin: 0 20px;
         }
         header nav ul li a {
             color: white;
             text-decoration: none;
-            padding: 7px 15px;
+            padding: 10px 20px;
             transition: background-color 0.3s;
         }
         header nav ul li a:hover {
             background-color: #0074D9;
         }
         main {
-            padding: 140px 20px 20px; /* Adjusted top padding for fixed header */
-            text-align: center;
+            padding: 140px 20px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
         }
         .news-article {
             background-color: #ffffff;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin: 20px auto; /* 修改外边距为上下20px，左右自动，使其水平居中 */
+            margin: 10px;
             padding: 20px;
             border-radius: 10px;
-            width: 80%; /* 增大宽度至80% */
-            max-width: 1200px; /* 可以调整这个值以适应不同屏幕尺寸 */
+            width: calc(50% - 300px); /* Subtract margin */
+            box-sizing: border-box;
         }
         .news-image {
-            width: 100%;
+            width: 50%;
             height: auto;
-            max-height: 300px; /* Limit image height */
+            max-height: 300px;
             border-radius: 5px;
             margin-bottom: 15px;
         }
@@ -73,6 +75,11 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+        }
+        @media (max-width: 768px) {
+            .news-article {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -90,7 +97,6 @@
     </nav>
 </header>
 <main>
-    <h1>AI News</h1>
     <div class="news-article">
         <a href="https://csdnnews.blog.csdn.net/article/details/138339305?spm=1000.2115.3001.5926&ydreferer=aHR0cHM6Ly93d3cuY3Nkbi5uZXQv">
             <img src="AInewimages/1.jpg" alt="AI Breakthrough" class="news-image">

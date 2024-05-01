@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #004aad;
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        header .logo {
+            font-size: 1.8rem;
+            margin: 0 20px;
+        }
+        header nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+        header nav ul li {
+            margin: 0 10px;
+        }
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 7px 15px;
+            transition: background-color 0.3s;
+        }
+        header nav ul li a:hover {
+            background-color: #0074D9;
+        }
+        main {
+            padding: 80px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        main .embedded-site {
+            width: 100%;
+            height: 500px;
+            border: none;
+            overflow: hidden;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">LOGO</div>
+    <nav>
+        <ul>
+            <li><a href="home.html">课程大模型</a></li>
+            <li><a href="AInew.html">AI前沿新闻</a></li>
+            <li><a href="AInewsview.html">AI科普</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="index.html">退出登录</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h1>Welcome to Our Website!</h1>
+    <iframe src="https://appbuilder.baidu.com/s/cCOvz" class="embedded-site"></iframe>
+    <script>
+        // Replace 'authorization string' with your actual authorization token
+        const authorizationToken = 'bce-v3/ALTAK-oH2mqX2fCfis7BoQ54Dc3/439538993fe13b7e098f43a63e3d2f8894e2c661';
+        const appId = 'a2340a2d-1d15-4642-b5b7-c80fd3c3cc7b';
+
+        fetch('https://qianfan.baidubce.com/v2/app/conversation', {
+            method: 'POST',
+            headers: {
+                'Authorization': authorizationToken,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                app_id: appId
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                // Handle API response data here
+            })
+            .catch(error => console.error('Error:', error));
+    </script>
+</main>
+<footer>
+    <p>Copyright © 2024 Your Company Name. All rights reserved.</p>
+</footer>
+</body>
+</html>
